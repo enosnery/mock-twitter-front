@@ -1,0 +1,14 @@
+<mat-list>
+  <div *ngFor="let item of tweetList">
+    <div class="tweet-item">
+      <h3>
+        {{item.tweet}}
+      </h3>
+      <h6>
+        {{item.dataRegister}}
+      </h6>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</mat-list>
+

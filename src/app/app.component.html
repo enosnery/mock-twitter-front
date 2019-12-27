@@ -1,3 +1,15 @@
 <mat-toolbar color="primary">
 Mockwitter
 </mat-toolbar>
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav mode="side" opened>
+    <app-left-side-content></app-left-side-content>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-main-content></app-main-content>
+  </mat-sidenav-content>
+  <mat-sidenav mode="side" opened position="end">
+    <app-right-side-content></app-right-side-content>
+  </mat-sidenav>
+</mat-sidenav-container>
+
