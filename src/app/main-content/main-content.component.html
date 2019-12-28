@@ -21,14 +21,14 @@
   <div *ngIf="tweetList.length > 0">
     <div  *ngFor="let item of tweetList">
       <div class="tweet-item">
-        <h6>
-
+        <h6 style="font-style: italic">
+        {{item.tweetUser}}
         </h6>
         <h3>
           {{item.tweet}}
         </h3>
         <h6>
-          {{item.dataRegister | date: 'medium'}}
+          {{item.dateRegister | date: 'medium'}}
         </h6>
       </div>
       <mat-divider></mat-divider>

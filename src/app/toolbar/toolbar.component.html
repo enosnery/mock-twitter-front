@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  Mockwitter
+  <mat-form-field>
+    <mat-select (selectionChange)="carregarUsuario()" [(value)]="currentUser">
+      <mat-option *ngFor="let user of users" [value]="user.id">
+        {{user.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>

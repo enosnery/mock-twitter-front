@@ -20,26 +20,27 @@ export class MainContentComponent implements OnInit {
 
   ngOnInit() {
     this.tweetList = new Array<TweetItem>();
-    this.carregarTweets();
   }
 
-  carregarTweets() {
-    console.log('carreguei');
-    this.http.get<FeedResponse>('http://localhost:8084/feed?userId=1').subscribe((data) => {
+  carregarTweets(id) {
+    this.tweetList = new Array<TweetItem>();
+    this.http.get<FeedResponse>('http://localhost:8084/feed?userId=' + id)
+      .subscribe((data) => {
       console.log(data);
       this.tweetList = data.response;
-      });
+    });
   }
 
   postTweet() {
+    const id = parseFloat(sessionStorage.getItem('current'));
     const requestBody: PostTweetRequest = {
-      userId: 1,
+      userId: id,
       tweet: this.tweet
     };
     this.http.post('http://localhost:8084/tweet', requestBody).subscribe((data) => {
       console.log(data);
-      this.carregarTweets();
+      this.carregarTweets(sessionStorage.getItem('current'));
+      this.tweet = '';
     });
-
   }
 }

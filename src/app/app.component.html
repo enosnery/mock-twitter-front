@@ -1,12 +1,10 @@
-<mat-toolbar color="primary">
-Mockwitter
-</mat-toolbar>
+<app-toolbar [main]="main" [right]="right"></app-toolbar>
 <mat-sidenav-container class="example-container" >
   <mat-sidenav-content>
     <app-main-content #main></app-main-content>
   </mat-sidenav-content>
   <mat-sidenav mode="side" opened position="end">
-    <app-right-side-content [sibling]="main"></app-right-side-content>
+    <app-right-side-content #right [sibling]="main"></app-right-side-content>
   </mat-sidenav>
 </mat-sidenav-container>
 
