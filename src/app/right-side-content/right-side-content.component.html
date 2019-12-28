@@ -1,1 +1,19 @@
-<p>right-side-content works!</p>
+<mat-list>
+  <div class="title-item">
+    <h2>
+      Usuários
+    </h2>
+  </div>
+  <mat-divider></mat-divider>
+  <div *ngFor="let item of userList; let i = index" (click)="followUser(i)">
+    <div class="user-item">
+      <h4>
+        {{item.name}}
+        <mat-icon *ngIf="item.isFollowing" aria-hidden="false" aria-label="Follow User">done_outline</mat-icon>
+      </h4>
+
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</mat-list>
+

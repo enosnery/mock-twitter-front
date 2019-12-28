@@ -1,14 +1,38 @@
 <mat-list>
-  <div *ngFor="let item of tweetList">
-    <div class="tweet-item">
-      <h3>
-        {{item.tweet}}
-      </h3>
-      <h6>
-        {{item.dataRegister | date: 'medium'}}
-      </h6>
+  <div class="postar">
+    <mat-form-field >
+    <textarea
+      matInput
+      cdkTextareaAutosize
+      #autosize="cdkTextareaAutosize"
+      cdkAutosizeMaxRows="3"
+      placeholder="Poste aqui"
+      maxlength="140"
+    [(ngModel)]="tweet">
+    </textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="postTweet()">Postar</button>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="no-tweets" *ngIf="tweetList.length == 0">
+    <h3>Você está sem tweets.</h3>
+    <h4>Poste ou siga pessoas para ver os tweets aqui!</h4>
+  </div>
+  <div *ngIf="tweetList.length > 0">
+    <div  *ngFor="let item of tweetList">
+      <div class="tweet-item">
+        <h6>
+
+        </h6>
+        <h3>
+          {{item.tweet}}
+        </h3>
+        <h6>
+          {{item.dataRegister | date: 'medium'}}
+        </h6>
+      </div>
+      <mat-divider></mat-divider>
     </div>
-    <mat-divider></mat-divider>
   </div>
 </mat-list>
 

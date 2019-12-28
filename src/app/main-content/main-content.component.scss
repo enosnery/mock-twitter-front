@@ -1,3 +1,18 @@
 .tweet-item{
   padding: 10px;
 }
+
+.no-tweets{
+  padding: 10px;
+  text-align: center;
+}
+
+.postar{
+  width: 60vw;
+  margin: 20px;
+}
+
+.postar mat-form-field{
+  display: inline;
+  float: none;
+}
